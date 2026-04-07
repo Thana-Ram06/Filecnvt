@@ -6,14 +6,13 @@ export function Logo() {
   return (
     <button
       onClick={() => navigate("/")}
-      className="flex items-center gap-2 group"
+      className="flex items-center group"
     >
-      <div className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center">
-        <span className="text-primary-foreground text-xs font-semibold">L</span>
-      </div>
-      <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors duration-300">
-        linkly
-      </span>
+      <img
+        src="/nexify-logo.png"
+        alt="Nexify"
+        className="h-8 w-auto object-contain group-hover:opacity-80 transition-opacity duration-300"
+      />
     </button>
   );
 }

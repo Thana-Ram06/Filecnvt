@@ -333,7 +333,7 @@ function Footer({ onHome }: { onHome: () => void }) {
         <p className="text-xs text-muted-foreground/50">
           Powered by{" "}
           <button onClick={onHome} className="hover:text-primary transition-colors">
-            fileconv
+            Nexify
           </button>
         </p>
       </div>

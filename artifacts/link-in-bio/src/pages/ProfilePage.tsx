@@ -120,7 +120,7 @@ export function ProfilePage() {
               onClick={() => navigate("/")}
               className="hover:text-primary transition-colors duration-200"
             >
-              linkly
+              Nexify
             </button>
           </p>
         </div>
