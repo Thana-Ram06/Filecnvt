@@ -1,0 +1,39 @@
+[
+  {
+    "username": "thana",
+    "name": "Thana Ji",
+    "bio": "Developer & Creator",
+    "avatar": "TJ",
+    "links": [
+      { "title": "Portfolio", "url": "https://example.com", "icon": "globe" },
+      { "title": "Twitter / X", "url": "https://twitter.com", "icon": "twitter" },
+      { "title": "GitHub", "url": "https://github.com", "icon": "github" },
+      { "title": "LinkedIn", "url": "https://linkedin.com", "icon": "linkedin" },
+      { "title": "Newsletter", "url": "https://example.com/newsletter", "icon": "mail" }
+    ]
+  },
+  {
+    "username": "alex",
+    "name": "Alex Rivers",
+    "bio": "Designer & Maker — building things that matter",
+    "avatar": "AR",
+    "links": [
+      { "title": "My Design Work", "url": "https://example.com", "icon": "globe" },
+      { "title": "Dribbble", "url": "https://dribbble.com", "icon": "dribbble" },
+      { "title": "Twitter / X", "url": "https://twitter.com", "icon": "twitter" },
+      { "title": "Instagram", "url": "https://instagram.com", "icon": "instagram" }
+    ]
+  },
+  {
+    "username": "demo",
+    "name": "Demo Profile",
+    "bio": "This is a demo link-in-bio profile. Add your own links below.",
+    "avatar": "DP",
+    "links": [
+      { "title": "My Website", "url": "https://example.com", "icon": "globe" },
+      { "title": "Twitter / X", "url": "https://twitter.com", "icon": "twitter" },
+      { "title": "GitHub", "url": "https://github.com", "icon": "github" },
+      { "title": "Email Me", "url": "mailto:hello@example.com", "icon": "mail" }
+    ]
+  }
+]

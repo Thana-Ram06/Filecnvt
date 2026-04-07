@@ -2,7 +2,7 @@
 
 ## Overview
 
-pnpm workspace monorepo using TypeScript. Each package manages its own dependencies.
+pnpm workspace monorepo using TypeScript. Contains a premium link-in-bio website and supporting infrastructure.
 
 ## Stack
 
@@ -15,6 +15,35 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **Validation**: Zod (`zod/v4`), `drizzle-zod`
 - **API codegen**: Orval (from OpenAPI spec)
 - **Build**: esbuild (CJS bundle)
+
+## Artifacts
+
+### link-in-bio (`/`)
+A modern, premium link-in-bio website. Fully static React + Vite app.
+
+- **Landing page** (`/`) — Hero section with brand identity and CTA
+- **Profile pages** (`/u/:username`) — Dynamic routes reading from static JSON data
+- **404 page** — Clean "User not found" experience
+
+**Key files:**
+- `artifacts/link-in-bio/src/data/profiles.json` — Profile data (add profiles here)
+- `artifacts/link-in-bio/src/pages/LandingPage.tsx` — Hero landing page
+- `artifacts/link-in-bio/src/pages/ProfilePage.tsx` — User profile page
+- `artifacts/link-in-bio/src/pages/NotFoundPage.tsx` — 404 page
+- `artifacts/link-in-bio/src/components/LinkCard.tsx` — Individual link button
+- `artifacts/link-in-bio/src/components/ThemeToggle.tsx` — Light/dark mode toggle
+- `artifacts/link-in-bio/src/components/CopyButton.tsx` — Copy profile URL button
+- `artifacts/link-in-bio/src/hooks/useTheme.ts` — Theme persistence hook
+
+**Design:**
+- Dark mode default, light mode toggle
+- Color: `#0e0e0e` background, `#22c55e` green accent
+- Typography: Instrument Serif (headings) + Inter (body)
+- Fully responsive, mobile-first
+- Smooth animations and hover effects
+
+### API Server (`/api`)
+Express 5 backend (unused by link-in-bio, kept for future use).
 
 ## Key Commands
 

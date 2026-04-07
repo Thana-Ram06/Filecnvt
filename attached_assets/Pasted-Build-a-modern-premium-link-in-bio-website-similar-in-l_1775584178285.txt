@@ -1,0 +1,111 @@
+Build a modern, premium "link-in-bio" website similar in layout and UI style to tree.je, but do NOT copy it. Use a unique color system and clean minimal design.
+
+## Tech Stack
+- Next.js 16 (App Router)
+- TypeScript
+- Tailwind CSS
+- Fully static (NO database, NO Firebase, NO backend)
+- Must be deployable on Vercel (static-friendly)
+
+## Core Concept
+This is a simple link-in-bio website where profiles are created using static data (JSON or local file), not user accounts.
+
+## Design Requirements
+- Premium minimal SaaS UI (inspired by tree.je, tpot.cc, lnk.ad)
+- Center-aligned layout
+- Clean spacing, lots of whitespace
+- Soft borders only (no heavy shadows)
+- Rounded corners (xl)
+- Smooth hover animations (scale + opacity)
+- Fully responsive (mobile-first)
+
+## Typography
+- Headings: Instrument Serif
+- Body: Inter
+
+## Color Theme (Dark Premium)
+- Background: #0e0e0e
+- Card: #171717
+- Border: #2a2a2a
+- Text: #ffffff
+- Secondary text: #a3a3a3
+- Accent: #22c55e
+
+## Pages to Build
+
+### 1. Landing Page (/)
+- Logo + name (centered)
+- Big headline (serif font)
+- Short description
+- CTA button (View Demo Profile)
+- Clean minimal hero section
+
+### 2. Profile Page (/u/[username])
+- Dynamic route using static data
+- Example: /u/thana
+- Data should come from a local JSON file
+
+Example data structure:
+[
+  {
+    "username": "thana",
+    "name": "Thana Ji",
+    "bio": "Developer & Creator",
+    "links": [
+      { "title": "Portfolio", "url": "https://example.com" },
+      { "title": "Twitter", "url": "https://twitter.com" }
+    ]
+  }
+]
+
+- Show:
+  - Name
+  - Bio
+  - List of links as cards
+
+### 3. 404 Page
+- Clean minimal design
+- "User not found"
+
+## Features
+- No authentication
+- No database
+- Static JSON-based data
+- Fast loading
+- SEO-friendly
+- Clean URL structure
+
+## UI Components
+- Button component
+- Card component (link card)
+- Minimal header/footer
+
+## Animations
+- Fade-in on load
+- Hover scale (1.02)
+- Smooth transitions (300ms)
+
+## Folder Structure
+- /app
+- /components
+- /data (for JSON profiles)
+- /styles
+
+## Important Rules
+- DO NOT use Firebase or any database
+- DO NOT use authentication
+- DO NOT use server-side APIs
+- Keep everything static and simple
+- Must work perfectly on Vercel
+
+## Bonus (if possible)
+- Add copy profile link button
+- Add simple theme toggle (light/dark)
+- Add favicon + clean branding
+
+## Output
+- Full working project code
+- Clean file structure
+- Ready to deploy on Vercel without errors
+
+Make the UI extremely clean, premium, and modern. Focus on spacing, typography, and minimal design.
