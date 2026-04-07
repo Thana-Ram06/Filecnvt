@@ -97,7 +97,7 @@ export async function imageToPdf(file: File): Promise<ConversionResult> {
   page.drawImage(jpgImage, { x: 0, y: 0, width, height });
 
   const pdfBytes = await pdfDoc.save();
-  const blob = new Blob([pdfBytes], { type: "application/pdf" });
+  const blob = new Blob([pdfBytes.buffer as ArrayBuffer], { type: "application/pdf" });
   const baseName = file.name.replace(/\.[^/.]+$/, "");
   return { blob, filename: `${baseName}.pdf`, mimeType: "application/pdf" };
 }
@@ -151,7 +151,7 @@ export async function txtToPdf(file: File): Promise<ConversionResult> {
   }
 
   const pdfBytes = await pdfDoc.save();
-  const blob = new Blob([pdfBytes], { type: "application/pdf" });
+  const blob = new Blob([pdfBytes.buffer as ArrayBuffer], { type: "application/pdf" });
   const baseName = file.name.replace(/\.[^/.]+$/, "");
   return { blob, filename: `${baseName}.pdf`, mimeType: "application/pdf" };
 }
@@ -189,7 +189,7 @@ export async function pdfToImages(
       ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
 
-    await pdfPage.render({ canvasContext: ctx, viewport }).promise;
+    await pdfPage.render({ canvasContext: ctx, viewport, canvas }).promise;
 
     const blob = await new Promise<Blob>((resolve, reject) => {
       canvas.toBlob(

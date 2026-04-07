@@ -1,0 +1,148 @@
+You are improving an existing Next.js project similar to tree.je — a privacy-first file converter that runs fully in the browser.
+
+IMPORTANT:
+- This is NOT a new project
+- You must EXTEND and IMPROVE the existing codebase
+- Do NOT break existing features
+- Keep UI consistent and minimal
+
+## Core Rules
+- No database
+- No authentication
+- No external APIs
+- Everything must run client-side in browser
+- Must remain deployable on Vercel
+
+## Existing Concept
+A minimal file conversion tool where users upload files and process them locally.
+
+Now expand it into a full utility platform.
+
+---
+
+## 🔥 Add New Tools (Client-Side Only)
+
+### 📄 PDF Tools (use pdf-lib)
+- PDF Merge (multiple files → one PDF)
+- PDF Split (by pages)
+- PDF Rotate
+- PDF Remove Pages
+- Extract Pages from PDF
+
+### 🖼️ Image Tools (use Canvas API)
+- Image Resize (width/height input)
+- Image Compress (quality slider)
+- Image Crop (basic UI)
+- JPG ↔ PNG
+- PNG ↔ WEBP
+- JPG ↔ WEBP
+- Bulk Image Converter (multiple files)
+
+### 📦 File Tools (use JSZip)
+- Extract ZIP files
+- Create ZIP from multiple files
+- Download all as ZIP
+
+### 🔤 Text / Dev Tools (pure JS)
+- JSON Formatter
+- JSON ↔ CSV
+- Base64 Encode / Decode
+- URL Encode / Decode
+- Text Case Converter
+
+---
+
+## 🧠 Smart UX Upgrade (VERY IMPORTANT)
+
+### 1. Tool Detection (BIG FEATURE)
+- User drags file
+- App auto-detects type:
+  - PDF → show PDF tools
+  - Image → show image tools
+  - ZIP → show unzip tools
+
+### 2. Tool Categories UI
+Group tools into sections:
+- PDF
+- Image
+- File
+- Text
+
+---
+
+## 🎨 UI Guidelines (Keep tree.je style)
+
+- Ultra minimal
+- Centered layout
+- No clutter
+- No heavy shadows
+- Soft borders only
+- Smooth animations (200–300ms)
+
+### Layout Update
+
+#### Homepage
+- Title + tagline
+- Tool categories (minimal grid or list)
+- Drag & drop zone (center focus)
+
+#### Tool Page
+- File upload area
+- Tool controls (sliders, inputs)
+- Output preview + download button
+
+---
+
+## ⚙️ Components to Build
+
+- FileDropzone
+- ToolSwitcher (based on file type)
+- PDFToolPanel
+- ImageToolPanel
+- TextToolPanel
+- OutputPreview
+- DownloadButton
+
+---
+
+## ⚡ Performance
+- Use Web Workers if needed
+- Avoid blocking UI
+- Handle large files efficiently
+
+---
+
+## 📁 Folder Structure
+
+/app  
+/components  
+/lib  
+  - pdf  
+  - image  
+  - file  
+  - text  
+/utils  
+
+---
+
+## 🚫 Strict Rules
+- Do NOT add backend
+- Do NOT upload files anywhere
+- Do NOT use third-party APIs
+- Do NOT overcomplicate UI
+
+---
+
+## ✅ Output
+- Updated code only (not full rewrite)
+- Maintain clean structure
+- Fully working features
+- No breaking changes
+
+---
+
+## 🎯 Goal
+
+Turn the current project into a powerful, privacy-first file utility platform while keeping it minimal, fast, and fully browser-based like tree.je.
+
+Focus on usability, performance, and clean design
