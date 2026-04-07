@@ -1,0 +1,114 @@
+Build a modern, privacy-first file conversion web app similar to tree.je.
+
+## Core Concept
+This app allows users to convert files (PDF, images, etc.) directly in the browser without uploading them to any server.
+
+IMPORTANT:
+- All processing must happen client-side
+- No backend file uploads
+- No database
+- No authentication
+
+## Tech Stack
+- Next.js 16 (App Router)
+- TypeScript
+- Tailwind CSS
+- PDF processing: pdf-lib or pdfjs
+- Image processing: Canvas API
+- Fully deployable on Vercel
+
+## Key Principle
+"Your files never leave your device"
+
+## Features
+
+### PDF Tools
+- PDF to Image (JPG/PNG)
+- Image to PDF
+- TXT to PDF
+- HTML to PDF (basic)
+
+### Image Tools
+- JPG to PNG
+- PNG to JPG
+- JPG to WEBP
+- WEBP to PNG
+
+## UI / UX Design (VERY IMPORTANT)
+
+Follow tree.je style:
+- Ultra minimal interface
+- Centered layout
+- No clutter
+- No heavy cards or shadows
+- Soft borders only
+- Smooth transitions
+
+### Layout
+
+#### Homepage (/)
+- Centered title (e.g. "Convert files instantly")
+- Short tagline (privacy-focused)
+- List of tools (simple text buttons or minimal cards)
+
+#### Tool Page (/tools/[tool])
+Example: /tools/pdf-to-image
+
+- Centered container
+- File upload area (drag & drop)
+- Convert button
+- Output preview/download
+
+## Design Theme (Custom)
+- Background: #0e0e0e
+- Text: #ffffff
+- Secondary text: #a3a3a3
+- Accent: #22c55e
+- Borders: #2a2a2a
+
+## Typography
+- Headings: Instrument Serif
+- Body: Inter
+
+## Components
+- FileUploader
+- ToolCard
+- Button
+- OutputPreview
+
+## Behavior
+- Drag & drop file upload
+- Instant processing in browser
+- Show preview or download option
+- No page reloads
+
+## Performance
+- Optimize for large files
+- Use efficient processing libraries
+- Avoid blocking UI
+
+## Rules
+- DO NOT use any backend server
+- DO NOT upload files anywhere
+- DO NOT store user data
+- Everything must run in browser
+
+## Bonus Features (Optional)
+- Batch file processing
+- Progress indicator
+- Copy/download buttons
+- Dark/light toggle
+
+## Folder Structure
+- /app
+- /components
+- /lib (processing logic)
+- /utils
+- /styles
+
+## Output
+- Full working project
+- Clean structure
+- Ready for Vercel deployment
+
+Make it feel premium, minimal, and fast. Focus on privacy, simplicity, and clean UX like tree.je.
