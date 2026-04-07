@@ -1,9 +1,8 @@
-import { useState, type DragEvent } from "react";
 import { useLocation } from "wouter";
 import { Logo } from "@/components/Logo";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { TOOLS, detectCategory, type ToolCategory, type Tool } from "@/lib/tools";
-import { Shield, Zap, Lock, Upload, FileText, Image, Archive, Code } from "lucide-react";
+import { TOOLS, type ToolCategory } from "@/lib/tools";
+import { Shield, Zap, Lock, FileText, Image, Archive, Code } from "lucide-react";
 
 const CATEGORIES: { id: ToolCategory; label: string; icon: React.ReactNode; color: string }[] = [
   { id: "pdf", label: "PDF Tools", icon: <FileText size={14} />, color: "text-red-400" },
@@ -14,30 +13,6 @@ const CATEGORIES: { id: ToolCategory; label: string; icon: React.ReactNode; colo
 
 export function HomePage() {
   const [, navigate] = useLocation();
-  const [draggingOnZone, setDraggingOnZone] = useState(false);
-  const [suggestedTools, setSuggestedTools] = useState<Tool[] | null>(null);
-  const [droppedFileName, setDroppedFileName] = useState<string | null>(null);
-
-  const handleDragOver = (e: DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    setDraggingOnZone(true);
-  };
-
-  const handleDragLeave = () => setDraggingOnZone(false);
-
-  const handleDrop = (e: DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    setDraggingOnZone(false);
-    const file = e.dataTransfer.files[0];
-    if (!file) return;
-    setDroppedFileName(file.name);
-    const category = detectCategory(file.type);
-    if (category) {
-      setSuggestedTools(TOOLS.filter((t) => t.category === category).slice(0, 4));
-    } else {
-      setSuggestedTools([]);
-    }
-  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -63,73 +38,6 @@ export function HomePage() {
           <p className="animate-fade-in-up stagger-3 text-muted-foreground max-w-md mx-auto text-base leading-relaxed">
             30+ browser-based tools for PDF, images, files & text. 100% private — no uploads, no accounts.
           </p>
-        </div>
-
-        {/* Smart drop zone */}
-        <div className="animate-fade-in-up stagger-4">
-          <div
-            onDragOver={handleDragOver}
-            onDragLeave={handleDragLeave}
-            onDrop={handleDrop}
-            className={`
-              w-full flex flex-col items-center justify-center gap-3
-              px-6 py-10 rounded-2xl border-2 border-dashed
-              transition-all duration-300
-              ${draggingOnZone
-                ? "border-primary bg-primary/5 scale-[1.01]"
-                : "border-border hover:border-primary/40 hover:bg-card/40 cursor-default"}
-            `}
-          >
-            <div className={`w-10 h-10 rounded-xl border border-border bg-secondary flex items-center justify-center transition-colors duration-300 ${draggingOnZone ? "border-primary/60 bg-primary/10" : ""}`}>
-              <Upload size={17} className={draggingOnZone ? "text-primary" : "text-muted-foreground"} />
-            </div>
-            <div className="text-center">
-              <p className="text-sm font-medium text-foreground">Drop any file here</p>
-              <p className="text-xs text-muted-foreground mt-0.5">We'll suggest the right tools instantly</p>
-            </div>
-          </div>
-
-          {/* Suggestion panel */}
-          {suggestedTools !== null && (
-            <div className="mt-3 p-4 rounded-xl border border-primary/20 bg-primary/5 animate-fade-in">
-              {suggestedTools.length === 0 ? (
-                <p className="text-sm text-muted-foreground text-center">
-                  No specific tools for this file type — browse all tools below.
-                </p>
-              ) : (
-                <>
-                  <p className="text-xs text-muted-foreground mb-3">
-                    Suggested tools for <span className="text-foreground font-medium">{droppedFileName}</span>:
-                  </p>
-                  <div className="grid grid-cols-2 gap-2">
-                    {suggestedTools.map((tool) => (
-                      <button
-                        key={tool.id}
-                        onClick={() => navigate(`/tools/${tool.id}`)}
-                        className="
-                          flex items-start gap-2.5 p-3 rounded-xl text-left
-                          border border-border bg-card
-                          hover:border-primary/40 hover:scale-[1.01]
-                          transition-all duration-200
-                        "
-                      >
-                        <div className="flex-1 min-w-0">
-                          <p className="text-sm font-medium text-foreground">{tool.title}</p>
-                          <p className="text-xs text-muted-foreground mt-0.5 truncate">{tool.description}</p>
-                        </div>
-                      </button>
-                    ))}
-                  </div>
-                  <button
-                    onClick={() => { setSuggestedTools(null); setDroppedFileName(null); }}
-                    className="mt-3 text-xs text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Dismiss
-                  </button>
-                </>
-              )}
-            </div>
-          )}
         </div>
 
         {/* Trust badges */}
@@ -195,6 +103,49 @@ export function HomePage() {
             </div>
           );
         })}
+        {/* What is Nexify? */}
+        <div className="animate-fade-in-up space-y-10 pt-4 pb-2">
+          <div className="text-center space-y-3">
+            <h2 className="font-serif text-3xl sm:text-4xl text-foreground">What is Nexify?</h2>
+            <p className="text-[#a3a3a3] text-sm leading-relaxed max-w-xl mx-auto">
+              Nexify is a privacy-first file conversion platform that runs entirely in your browser.
+              It allows you to convert, compress, and transform files without uploading them to any server.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {[
+              {
+                emoji: "🔒",
+                title: "Privacy First",
+                body: "Your files never leave your device. All processing happens locally in your browser, ensuring complete privacy and security.",
+              },
+              {
+                emoji: "⚡",
+                title: "Instant Processing",
+                body: "No waiting for uploads or downloads. Everything runs instantly using your device's power.",
+              },
+              {
+                emoji: "🧠",
+                title: "How It Works",
+                body: "Nexify uses modern browser technologies to process files directly on your device. No backend servers, no storage, and no risk of data leaks.",
+              },
+              {
+                emoji: "🌍",
+                title: "Accessible to Everyone",
+                body: "No login, no signup, no installation. Just open the website and start using it.",
+              },
+            ].map(({ emoji, title, body }) => (
+              <div key={title} className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-base">{emoji}</span>
+                  <h3 className="text-sm font-semibold text-foreground">{title}</h3>
+                </div>
+                <p className="text-xs text-[#a3a3a3] leading-relaxed">{body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </main>
 
       {/* Footer */}

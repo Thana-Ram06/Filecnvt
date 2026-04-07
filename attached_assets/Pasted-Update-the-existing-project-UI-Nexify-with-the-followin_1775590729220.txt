@@ -1,0 +1,76 @@
+Update the existing project UI (Nexify) with the following improvements. Do NOT break existing functionality.
+
+## 1. Remove Non-Working Section (IMPORTANT)
+- Remove the entire "Drop any file here" upload section
+- This includes:
+  - Upload icon
+  - Text: "Drop any file here"
+  - Subtext: "We'll suggest the right tools instantly"
+- Ensure layout spacing adjusts properly after removal
+
+---
+
+## 2. Add Detailed Info Section (Above Footer)
+
+Add a new section just above the footer to make the page feel complete and informative.
+
+### Section Title:
+"What is Nexify?"
+
+### Content (write clean, minimal text):
+
+Nexify is a privacy-first file conversion platform that runs entirely in your browser.  
+It allows you to convert, compress, and transform files without uploading them to any server.
+
+### Add Subsections:
+
+#### 🔒 Privacy First
+Your files never leave your device.  
+All processing happens locally in your browser, ensuring complete privacy and security.
+
+#### ⚡ Instant Processing
+No waiting for uploads or downloads.  
+Everything runs instantly using your device’s power.
+
+#### 🧠 How It Works
+Nexify uses modern browser technologies to process files directly on your device.  
+This means no backend servers, no storage, and no risk of data leaks.
+
+#### 🌍 Accessible to Everyone
+No login, no signup, no installation.  
+Just open the website and start using it.
+
+---
+
+## 3. Design of This Section
+
+- Keep it minimal and clean (match tree.je style)
+- Center aligned
+- Max width container (like rest of page)
+- Proper spacing between paragraphs
+- Use subtle text colors:
+  - Heading: white
+  - Paragraph: #a3a3a3
+- Add slight spacing between subsections
+
+---
+
+## 4. UI Consistency
+
+- No heavy borders or shadows
+- Maintain premium minimal SaaS feel
+- Ensure mobile responsiveness
+
+---
+
+## 5. Output
+
+- Update only homepage layout
+- Do not rewrite entire project
+- Ensure spacing looks balanced after changes
+
+---
+
+## Goal
+
+Make the page feel complete, informative, and premium without adding clutter.
