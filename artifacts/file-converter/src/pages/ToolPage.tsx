@@ -75,7 +75,7 @@ export function ToolPage() {
           <div className="h-px bg-border/60 animate-fade-in-up stagger-2" />
           <TextToolPanel tool={tool} />
         </main>
-        <Footer onHome={() => navigate("/")} />
+        <Footer />
       </div>
     );
   }
@@ -269,7 +269,7 @@ export function ToolPage() {
           </div>
         )}
       </main>
-      <Footer onHome={() => navigate("/")} />
+      <Footer />
     </div>
   );
 }
@@ -278,10 +278,10 @@ export function ToolPage() {
 
 function Header() {
   return (
-    <header className="sticky top-0 z-10 w-full border-b border-border/60 backdrop-blur-sm bg-background/80">
+    <header className="sticky top-0 z-10 w-full border-b border-white/10 bg-[#0e0e0e]">
       <div className="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between">
         <Logo />
-        <ThemeToggle />
+        <ThemeToggle className="flex items-center justify-center w-9 h-9 rounded-xl border border-white/20 bg-white/5 text-white/70 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-105" />
       </div>
     </header>
   );
@@ -326,15 +326,20 @@ function PrivacyNote() {
   );
 }
 
-function Footer({ onHome }: { onHome: () => void }) {
+function Footer() {
   return (
     <footer className="border-t border-border/60 py-5">
       <div className="max-w-3xl mx-auto px-6 text-center">
-        <p className="text-xs text-muted-foreground/50">
-          Powered by{" "}
-          <button onClick={onHome} className="hover:text-primary transition-colors">
-            Nexify
-          </button>
+        <p className="text-xs text-[#a3a3a3]">
+          Made by{" "}
+          <a
+            href="https://x.com/alexanderte7a?s=21"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors duration-200"
+          >
+            Alexander
+          </a>
         </p>
       </div>
     </footer>

@@ -42,10 +42,10 @@ export function HomePage() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="sticky top-0 z-10 w-full border-b border-border/60 backdrop-blur-sm bg-background/80">
+      <header className="sticky top-0 z-10 w-full border-b border-white/10 bg-[#0e0e0e]">
         <div className="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between">
           <Logo />
-          <ThemeToggle />
+          <ThemeToggle className="flex items-center justify-center w-9 h-9 rounded-xl border border-white/20 bg-white/5 text-white/70 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-105" />
         </div>
       </header>
 
@@ -198,10 +198,19 @@ export function HomePage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border/60 py-6">
-        <div className="max-w-3xl mx-auto px-6 flex items-center justify-between">
-          <Logo />
-          <p className="text-xs text-muted-foreground/60">100% client-side · Zero uploads</p>
+      <footer className="border-t border-border/60 py-5">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-xs text-[#a3a3a3]">
+            Made by{" "}
+            <a
+              href="https://x.com/alexanderte7a?s=21"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors duration-200"
+            >
+              Alexander
+            </a>
+          </p>
         </div>
       </footer>
     </div>

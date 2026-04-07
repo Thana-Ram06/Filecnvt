@@ -30,10 +30,10 @@ export function ProfilePage() {
   if (!profile) {
     return (
       <div className="min-h-screen flex flex-col">
-        <header className="sticky top-0 z-10 w-full border-b border-border/60 backdrop-blur-sm bg-background/80">
+        <header className="sticky top-0 z-10 w-full border-b border-white/10 bg-[#0e0e0e]">
           <div className="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
             <Logo />
-            <ThemeToggle />
+            <ThemeToggle className="flex items-center justify-center w-9 h-9 rounded-xl border border-white/20 bg-white/5 text-white/70 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-105" />
           </div>
         </header>
         <main className="flex-1 flex flex-col items-center justify-center px-6 py-20 text-center">
@@ -64,10 +64,10 @@ export function ProfilePage() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="sticky top-0 z-10 w-full border-b border-border/60 backdrop-blur-sm bg-background/80">
+      <header className="sticky top-0 z-10 w-full border-b border-white/10 bg-[#0e0e0e]">
         <div className="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
           <Logo />
-          <ThemeToggle />
+          <ThemeToggle className="flex items-center justify-center w-9 h-9 rounded-xl border border-white/20 bg-white/5 text-white/70 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-105" />
         </div>
       </header>
 
@@ -114,14 +114,16 @@ export function ProfilePage() {
       {/* Footer */}
       <footer className="border-t border-border/60 py-5 mt-auto">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-xs text-muted-foreground/50">
-            Powered by{" "}
-            <button
-              onClick={() => navigate("/")}
+          <p className="text-xs text-[#a3a3a3]">
+            Made by{" "}
+            <a
+              href="https://x.com/alexanderte7a?s=21"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-primary transition-colors duration-200"
             >
-              Nexify
-            </button>
+              Alexander
+            </a>
           </p>
         </div>
       </footer>

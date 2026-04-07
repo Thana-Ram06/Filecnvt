@@ -9,17 +9,17 @@ export function LandingPage() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="sticky top-0 z-10 w-full border-b border-border/60 backdrop-blur-sm bg-background/80">
+      <header className="sticky top-0 z-10 w-full border-b border-white/10 bg-[#0e0e0e]">
         <div className="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
           <Logo />
           <div className="flex items-center gap-3">
             <button
               onClick={() => navigate("/u/demo")}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+              className="text-sm text-white/60 hover:text-white transition-colors duration-200"
             >
               Demo
             </button>
-            <ThemeToggle />
+            <ThemeToggle className="flex items-center justify-center w-9 h-9 rounded-xl border border-white/20 bg-white/5 text-white/70 hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-105" />
           </div>
         </div>
       </header>
@@ -128,11 +128,18 @@ export function LandingPage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border/60 py-6">
-        <div className="max-w-4xl mx-auto px-6 flex items-center justify-between">
-          <Logo />
-          <p className="text-xs text-muted-foreground">
-            Built with care · Fully static
+      <footer className="border-t border-border/60 py-5">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <p className="text-xs text-[#a3a3a3]">
+            Made by{" "}
+            <a
+              href="https://x.com/alexanderte7a?s=21"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors duration-200"
+            >
+              Alexander
+            </a>
           </p>
         </div>
       </footer>
